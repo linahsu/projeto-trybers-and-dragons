@@ -38,7 +38,7 @@ export default class Character implements Fighter {
   get strength(): number { return this._strength; }
   get defense(): number { return this._defense; }
   get dexterity(): number { return this._dexterity; }
-  get energy(): Energy { return this._energy; }
+  get energy(): Energy { return { ...this._energy }; }
 
   public getMaxLifePointsLevelUp(): number {
     let maxLevelUp = this._maxLifePoints + getRandomInt(1, 10);
