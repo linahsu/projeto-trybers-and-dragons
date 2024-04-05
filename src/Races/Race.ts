@@ -1,7 +1,6 @@
 export default abstract class Race {
   private _name: string;
   private _dexterity: number;
-  private static _createdInstances = 0;
 
   constructor(name: string, dexterity: number) {
     this._name = name;
