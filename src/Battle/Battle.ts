@@ -1,7 +1,7 @@
-import Character from '../Character';
+import Fighter from '../Fighter';
 
 abstract class Battle {
-  constructor(private _player: Character) { }
+  constructor(private _player: Fighter) { }
 
   get player() {
     return this._player;
