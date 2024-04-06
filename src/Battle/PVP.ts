@@ -27,10 +27,12 @@ export default class PVP extends Battle {
     if (firstPlayer.lifePoints !== -1) {
       firstPlayer.attack(secondPlayer);
       secondPlayer.receiveDamage(firstPlayer.strength);
+      console.log('Player 2: ', secondPlayer.lifePoints);
     }
     if (secondPlayer.lifePoints !== -1) {
       secondPlayer.attack(firstPlayer);
       firstPlayer.receiveDamage(secondPlayer.strength);
+      console.log('Player 1: ', firstPlayer.lifePoints);
     }
   }
 
@@ -38,7 +40,7 @@ export default class PVP extends Battle {
     const player1 = super.player;
     const player2 = this._player2;
 
-    while (player1.lifePoints !== -1 || player2.lifePoints !== -1) {
+    while (player1.lifePoints > 0 && player2.lifePoints > 0) {
       PVP.playerAttacks(player1, player2);
     }
 
