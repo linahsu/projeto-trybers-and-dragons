@@ -1,5 +1,6 @@
 import Fighter from '../Fighter';
 
+// Create abstract class Battle to be a base to the different battle types of the game
 abstract class Battle {
   constructor(private _player: Fighter) { }
 

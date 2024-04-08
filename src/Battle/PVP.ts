@@ -3,13 +3,13 @@ import Fighter from '../Fighter';
 import Battle from './Battle';
 
 export default class PVP extends Battle {
-  private _player2: Fighter;
+  private _player2: Fighter; // create second player
 
   constructor(
     player1: Fighter,
     player2: Fighter,
   ) {
-    super(player1);
+    super(player1); // first player is created through the super class
     this._player2 = player2;
   }
 
@@ -21,6 +21,7 @@ export default class PVP extends Battle {
     return this._player2;
   }
 
+  // Function that implements the attack and received damage in a battle if both, players lifePoints are different of -1 (as long both of them are alive)
   static playerAttacks(
     firstPlayer: Fighter,
     secondPlayer: Fighter,
@@ -35,6 +36,7 @@ export default class PVP extends Battle {
     }
   }
 
+  // The battle will go on until one of the players is defeated, returning 1 if the first player is the winner and -1 if the second player is the winner
   fight(): number {
     const player1 = super.player;
     const player2 = this._player2;

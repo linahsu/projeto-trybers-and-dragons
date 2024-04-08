@@ -1,3 +1,4 @@
+// // Create abstract class Race to be a base to the different race types of the game
 export default abstract class Race {
   private _name: string;
   private _dexterity: number;
@@ -15,12 +16,9 @@ export default abstract class Race {
     return this._dexterity;
   }
 
+  // Function to get the amount of instances created
   static createdRacesInstances(): number {
-    // if (this._createdInstances > maxInstances) {
     throw new Error('Not implemented');
-    // }
-    // this._createdInstances += maxInstances;
-    // return this._createdInstances;
   }
 
   abstract get maxLifePoints(): number;

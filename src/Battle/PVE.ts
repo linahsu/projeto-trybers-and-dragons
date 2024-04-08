@@ -6,9 +6,9 @@ import Battle from './Battle';
 export default class PVE extends Battle {
   constructor(
     player: Fighter,
-    private _enviroment: SimpleFighter[] = [new Monster()],
+    private _enviroment: SimpleFighter[] = [new Monster()], // Array of enemies, starting with 1 monster as default. It can receive any instance that's a Sample Fighter type
   ) {
-    super(player);
+    super(player); // player is created through the super class
   }
 
   get player() {
@@ -19,12 +19,11 @@ export default class PVE extends Battle {
     return this._enviroment;
   }
 
+  // Function that implements the attack and received damage in a battle if both, player and enemy lifePoints are different of -1 (as long both of them are alive)
   static playerEnemyAttacks(
     player: Fighter,
     enemy: SimpleFighter,
-  ): void {
-    console.log('start player: ', player.lifePoints);
-    
+  ): void {    
     if (player.lifePoints !== -1) {
       player.attack(enemy);
       enemy.receiveDamage(player.strength);
@@ -37,6 +36,7 @@ export default class PVE extends Battle {
     }
   }
 
+  // Battle will reapeat as long as player or enemy lifePoints are higher them 0
   static getWinner(
     player: Fighter,
     enemy: SimpleFighter,
@@ -46,6 +46,7 @@ export default class PVE extends Battle {
     }
   }
 
+  // The battle will go on until all the enviroment enemies are defeated or the player is defeated, returning 1 if the player is the winner of -1 if it looses
   fight(): number {
     const player = super.player;
     const enviroment = this._enviroment;
