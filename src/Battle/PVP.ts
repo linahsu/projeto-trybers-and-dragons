@@ -1,4 +1,4 @@
-import Character from '../Character';
+// import Character from '../Character';
 import Fighter from '../Fighter';
 import Battle from './Battle';
 
@@ -28,12 +28,10 @@ export default class PVP extends Battle {
     if (firstPlayer.lifePoints !== -1) {
       firstPlayer.attack(secondPlayer);
       secondPlayer.receiveDamage(firstPlayer.strength);
-      console.log('Player 2: ', secondPlayer.lifePoints);
     }
     if (secondPlayer.lifePoints !== -1) {
       secondPlayer.attack(firstPlayer);
       firstPlayer.receiveDamage(secondPlayer.strength);
-      console.log('Player 1: ', firstPlayer.lifePoints);
     }
   }
 
@@ -49,8 +47,8 @@ export default class PVP extends Battle {
   }
 }
 
-const player1 = new Character('Player 1');
-const player2 = new Character('Player 2');
-player1.levelUp();
-const pvpBattle = new PVP(player1, player2);
-console.log(pvpBattle.fight());
+// const player1 = new Character('Player 1');
+// const player2 = new Character('Player 2');
+// player1.levelUp();
+// const pvpBattle = new PVP(player1, player2);
+// console.log(pvpBattle.fight());
